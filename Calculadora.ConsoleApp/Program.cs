@@ -64,7 +64,7 @@
                     resultado = primeiroNumero / segundoNumero;
                    
                 }
-                Console.WriteLine("O resultado é: " + resultado);
+                Console.WriteLine("O resultado é: " + resultado.ToString("N2"));
                 Console.ReadLine();
 
             } 
