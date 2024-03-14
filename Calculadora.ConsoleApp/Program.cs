@@ -17,25 +17,25 @@
 
                 string operacao = Console.ReadLine();
 
-                if (operacao != "S" && operacao != "1" && operacao != "2" && operacao != "3" && operacao != "4")
+             
+                if (operacao == "S" || operacao == "s")
+                {
+                    break;
+                }   
+                else if (operacao != "S" && operacao != "1" && operacao != "2" && operacao != "3" && operacao != "4")
                 {
                     Console.WriteLine("Informe uma opção válida");
                     continue;
                 }
-                else if (operacao == "S")
-                {
-                    break;
-                }
                 
                 Console.WriteLine("Informe o primeiro número: ");
-                string primeiroNumeroString = Console.ReadLine();
-                decimal primeiroNumero = decimal.Parse(primeiroNumeroString);
+                double primeiroNumero = Convert.ToDouble(Console.ReadLine());
 
                 Console.WriteLine("Informe o segundo número: ");
-                string segundoNumeroString = Console.ReadLine();
-                decimal segundoNumero = decimal.Parse(segundoNumeroString);
+                double segundoNumero = Convert.ToDouble(Console.ReadLine());
 
-                decimal resultado = 0;
+
+               double resultado = 0;
 
                 if (operacao == "1")
                 {
@@ -54,17 +54,17 @@
 
                 else if (operacao == "4")
                 {
-                    if (segundoNumero == 0)
+                    while(segundoNumero == 0)
                     {
-                        Console.WriteLine("Informe um número válido, não é possível dividir por 0");
+                        Console.WriteLine("Segundo número não pode ser 0, digite outro número");
+                        Console.WriteLine("Informe o segundo número novamente");
+
+                        segundoNumero = Convert.ToDouble(Console.ReadLine());
                     }
-                    else
-                    {
-                        resultado = primeiroNumero / segundoNumero;
-                    }
-                    
+                    resultado = primeiroNumero / segundoNumero;
+                   
                 }
-                Console.WriteLine("O resultado é: " + resultado.ToString("N2"));
+                Console.WriteLine("O resultado é: " + resultado);
                 Console.ReadLine();
 
             } 
